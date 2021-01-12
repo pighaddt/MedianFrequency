@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="loadExcelBefore_button">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>90</y>
+      <x>20</x>
+      <y>30</y>
       <width>381</width>
       <height>34</height>
      </rect>
@@ -76,14 +76,43 @@
    <widget class="QPushButton" name="loadExcelAfter_button">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>140</y>
+      <x>20</x>
+      <y>80</y>
       <width>381</width>
       <height>34</height>
      </rect>
     </property>
     <property name="text">
      <string>Load Excel After Data</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="maskEdit">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>40</y>
+      <width>113</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>50</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="RMS_button">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>80</y>
+      <width>141</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>RMS Calculate</string>
     </property>
    </widget>
   </widget>

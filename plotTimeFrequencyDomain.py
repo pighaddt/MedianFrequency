@@ -1,8 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.fftpack import fft,ifft
-import scipy.fftpack as fftpack
-
 
 def plotTimeFrequencyDomain(LRec):
 
@@ -10,6 +8,7 @@ def plotTimeFrequencyDomain(LRec):
     LRec = np.array(LRec) #data input
     Fs = 2000  # Sampling frequency
     T = 1 / Fs  # Sampling period
+
     L = len(LRec)  # Length of signal
     t = np.arange(len(LRec)) * T  # Time vector
     x = np.linspace(0, len(LRec) - 1, len(LRec)) #橫軸長度 0~len(data)-1

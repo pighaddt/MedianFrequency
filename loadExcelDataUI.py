@@ -4,6 +4,8 @@ import sys
 import pandas as pd
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
+
+from RMSDetect import RMSStartPoint
 from loadExcelData import Ui_MainWindow
 from plotTimeFrequencyDomain import plotTimeFrequencyDomain
 
@@ -15,6 +17,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.ui.loadExcelBefore_button.clicked.connect(self.buttonClicked1)
         self.ui.loadExcelAfter_button.clicked.connect(self.buttonClicked2)
+        self.ui.RMS_button.clicked.connect(self.RMSButtonClicked)
 
     def buttonClicked1(self):
         global beforeMedianFrequency
@@ -44,6 +47,16 @@ class MainWindow(QtWidgets.QMainWindow):
         print("afterMedianFrequency" ,  afterMedianFrequency)
         fatigueIndex = ((beforeMedianFrequency - afterMedianFrequency) / beforeMedianFrequency) * 100
         print("fatigueIndex = ", fatigueIndex)
+
+    def RMSButtonClicked(self):
+        global mask
+
+        filename = self.openFileNameDialog()
+        data = pd.read_csv(filename, skiprows=3, usecols=[3])
+        mask = self.ui.maskEdit.text()
+        print("mask = " + mask)
+        RMSStartPoint(data, mask)
+
 
 
 
